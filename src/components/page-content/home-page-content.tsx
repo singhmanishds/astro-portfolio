@@ -132,7 +132,7 @@ export default function HomePageContent() {
               transition={{ type: 'spring', stiffness: 300 }}
            >
                <img
-                  src="src/images/self.png"
+                  src="/images/self.png"
                   alt="Manish Singh Profile"
                   className="w-full h-full object-cover transform transition-transform duration-500 group-hover:scale-110"
                   data-ai-hint="professional headshot man studio lighting"
