@@ -11,7 +11,7 @@
     "astro": "astro",
     "genkit:dev": "genkit start -- tsx src/ai/dev.ts",
     "genkit:watch": "genkit start -- tsx --watch src/ai/dev.ts",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "astro check && tsc --noEmit"
   },
   "dependencies": {
     "@astrojs/check": "^0.9.2",
@@ -60,6 +60,7 @@
     "zod": "^3.24.2"
   },
   "devDependencies": {
+    "@astrojs/netlify": "^5.5.0",
     "genkit-cli": "^1.6.1"
   }
 }
