@@ -78,6 +78,8 @@ export default function GitHubPageContent() {
         </Button>
       </div>
 
+      {/* Commenting out the placeholder content until GitHub is active */}
+      {/*
       <p className="text-lg text-muted-foreground mb-12 leading-relaxed">
         Explore some of my public repositories showcasing my work in DevOps, automation, and cloud technologies. These projects reflect my commitment to open source and best practices. (Note: Repository details are illustrative).
       </p>
@@ -115,21 +117,28 @@ export default function GitHubPageContent() {
             </a>
         ))}
       </div>
+      */}
 
-      {/* Contribution Graph */}
-       <div className="mt-16 p-6 bg-card border border-border/50 rounded-xl shadow-md">
-        <h2 className="text-xl font-semibold mb-3 text-primary">Contribution Activity</h2>
+      {/* Contribution Graph / Placeholder */}
+       <div className="mt-16 p-6 bg-card border border-border/50 rounded-xl shadow-md text-center">
+        <h2 className="text-xl font-semibold mb-3 text-primary">GitHub Section Under Construction</h2>
         <p className="text-muted-foreground mb-5">
-          A visual snapshot of my GitHub contribution activity. Visit my profile for more details.
+          This section is currently being updated. Please check back soon for details on my GitHub contributions and projects.
         </p>
-         <a href={`https://github.com/${githubData.username}`} target="_blank" rel="noopener noreferrer" title="View contributions on GitHub" className="block overflow-hidden rounded-lg border border-border/30 hover:shadow-lg transition-shadow">
+         <a href={`https://github.com/${githubData.username}`} target="_blank" rel="noopener noreferrer" title="View contributions on GitHub" className="inline-block">
+           {/* Optionally keep the chart link if it works */}
+           {/*
            <img
              id="github-chart" // Add an ID for the useEffect hook to find
              src={`https://ghchart.rshah.org/${githubData.username}`}
              alt={`${githubData.username}'s Github contribution chart`}
-             className="w-full block"
+             className="w-full block rounded-lg border border-border/30 hover:shadow-lg transition-shadow"
             // onError logic is moved to useEffect
             />
+           */}
+            <Button variant="outline" className="hover:bg-accent hover:text-accent-foreground border-primary/50 hover:border-accent transition-all duration-300 focus-visible:ring-accent shadow-sm hover:shadow-md transform hover:-translate-y-0.5">
+                Visit My GitHub Profile <ExternalLink className="ml-2 h-4 w-4" />
+            </Button>
          </a>
       </div>
     </div>

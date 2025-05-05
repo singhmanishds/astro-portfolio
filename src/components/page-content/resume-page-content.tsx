@@ -16,6 +16,7 @@ const resumeData = {
     location: "Pune, Maharashtra 411057",
     linkedin: "https://www.linkedin.com/in/manishsingh9075/",
     github: "https://github.com/singhmanishds/",
+    // Removed phone number
   },
   summary: "DevOps Engineer with 6+ years of experience in cloud infrastructure design, deployment, and management across Azure, AWS, and GCP. Expertise in scalable infrastructure, automation with Terraform, and CI/CD pipelines using GitHub Actions and Azure DevOps. Proficient in containerization (Docker, Kubernetes, AKS) and optimizing deployment processes for enhanced productivity and reliability. Certified in multiple cloud and DevOps technologies, delivering secure, high-availability solutions aligned with business goals.",
   skills: [
@@ -129,7 +130,6 @@ export default function ResumePageContent() {
                 <Mail className="h-4 w-4 text-accent flex-shrink-0" />
                 <a href={`mailto:${resumeData.contact.email}`} className="hover:text-accent transition-colors break-all">{resumeData.contact.email}</a>
               </div>
-              {/* Removed Phone section */}
               <div className="flex items-center space-x-2">
                 <MapPin className="h-4 w-4 text-accent flex-shrink-0" />
                 <span>{resumeData.contact.location}</span>
