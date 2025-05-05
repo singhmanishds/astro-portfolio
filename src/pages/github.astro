@@ -1,9 +1,28 @@
 ---
+// src/pages/github.astro
 import Layout from '@/layouts/Layout.astro';
-import GitHubPageContent from '@/components/page-content/github-page-content';
+// import GitHubPageContent from '@/components/page-content/github-page-content'; // Keep import commented if data/component isn't ready
+import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card'; // Example UI import
 ---
 
-<Layout title="GitHub - Manish Singh">
-    {/* This component uses standard img/links and a useEffect hook for image fallback. client:load ensures the effect runs. */}
-    <GitHubPageContent client:load />
+<Layout title="GitHub | Manish Singh">
+  <div class="container mx-auto px-4 py-12 md:py-16 min-h-[calc(100vh-10rem)] flex items-center justify-center">
+     <Card class="max-w-xl w-full shadow-lg border border-border/50 bg-card rounded-xl p-8 text-center">
+       <CardHeader>
+         <CardTitle class="text-2xl font-semibold text-primary mb-2">GitHub Section Under Construction</CardTitle>
+       </CardHeader>
+       <CardContent>
+         <p class="text-muted-foreground text-lg leading-relaxed">
+           My GitHub contributions and repositories will be showcased here soon. Please check back later!
+         </p>
+         <a href="/" class="inline-block mt-6 px-6 py-2 bg-primary text-primary-foreground rounded-md text-base font-medium hover:bg-primary/90 transition-colors duration-200">
+           Go back to Home
+         </a>
+       </CardContent>
+     </Card>
+     {/*
+        Once GitHub content is ready, uncomment the GitHubPageContent component:
+        <GitHubPageContent client:visible />
+     */}
+  </div>
 </Layout>

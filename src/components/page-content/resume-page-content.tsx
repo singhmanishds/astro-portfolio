@@ -1,32 +1,31 @@
-
 'use client'; // Keep client directive for potential future interactions, though currently static
 
 import React from 'react';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 import { Badge } from "@/components/ui/badge";
-import { Mail, MapPin, Linkedin, Github, Monitor, Database, Cloud, Code, Terminal, Network, GitBranch, ShieldCheck, BrainCircuit, Server, BookOpen, UserCircle, Briefcase } from 'lucide-react';
+import { Mail, Phone, MapPin, Linkedin, Github, Monitor, Database, Cloud, Code, Terminal, Network, GitBranch, ShieldCheck, BrainCircuit, Server, BookOpen, UserCircle, Briefcase } from 'lucide-react';
 
-// Resume data updated: Removed phone, updated links
+// Resume data remains the same
 const resumeData = {
   name: "MANISH SINGH",
   contact: {
     email: "singhmanishds@gmail.com",
-    // phone: "09685359459", // Removed phone number
     location: "Pune, Maharashtra 411057",
-    linkedin: "https://www.linkedin.com/in/manishsingh9075/", // Updated LinkedIn URL
-    github: "https://github.com/singhmanishds", // Updated GitHub URL
+    linkedin: "https://www.linkedin.com/in/manishsingh9075/",
+    github: "https://github.com/singhmanishds/",
   },
-  summary: "DevOps Engineer with 5+ years of experience in cloud infrastructure design, deployment, and management across Azure, AWS, and GCP. Expertise in scalable infrastructure, automation with Terraform, and CI/CD pipelines using GitHub Actions and Azure DevOps. Proficient in containerization (Docker, Kubernetes, AKS) and optimizing deployment processes for enhanced productivity and reliability. Certified in multiple cloud and DevOps technologies, delivering secure, high-availability solutions aligned with business goals.",
+  summary: "DevOps Engineer with 6+ years of experience in cloud infrastructure design, deployment, and management across Azure, AWS, and GCP. Expertise in scalable infrastructure, automation with Terraform, and CI/CD pipelines using GitHub Actions and Azure DevOps. Proficient in containerization (Docker, Kubernetes, AKS) and optimizing deployment processes for enhanced productivity and reliability. Certified in multiple cloud and DevOps technologies, delivering secure, high-availability solutions aligned with business goals.",
   skills: [
     { category: "Cloud Platforms", items: ["Azure (Primary)", "AWS", "GCP"], icon: <Cloud className="h-4 w-4 mr-2 text-accent" /> },
+    { category: "Generative AI & ML", items: ["Retrieval-Augmented Generation (RAG)", "Azure OpenAI", "Fine-tuning LLMs", "Prompt Engineering", "LangChain","Open Source LLMs"], icon: <BrainCircuit className="h-4 w-4 mr-2 text-accent" /> },
     { category: "Infrastructure as Code", items: ["Terraform"], icon: <Code className="h-4 w-4 mr-2 text-accent" /> },
     { category: "CI/CD", items: ["GitHub Actions", "Azure DevOps", "Argo-CD"], icon: <GitBranch className="h-4 w-4 mr-2 text-accent" /> },
     { category: "Containerization & Orchestration", items: ["Docker", "Kubernetes", "Azure Kubernetes Service (AKS)", "Helm"], icon: <Monitor className="h-4 w-4 mr-2 text-accent" /> },
     { category: "Version Control & Collaboration", items: ["Git", "Jira", "Confluence", "Azure Boards"], icon: <Terminal className="h-4 w-4 mr-2 text-accent" /> },
     { category: "Automation", items: ["Python", "Bash"], icon: <Network className="h-4 w-4 mr-2 text-accent" /> },
     { category: "Observability", items: ["Grafana & Prometheus", "Azure Monitor"], icon: <Database className="h-4 w-4 mr-2 text-accent" /> },
-    { category: "Currently Expanding", items: ["Gen-AI", "Serverless Architecture", "Crossplane"], icon: <BrainCircuit className="h-4 w-4 mr-2 text-accent" /> },
+
   ],
   experience: [
      {
@@ -43,6 +42,7 @@ const resumeData = {
             "Implemented advanced observability solutions by developing real-time monitoring dashboards using Grafana and Prometheus for critical Azure services.",
             "Deployed Azure services such as Data Factory, Web Apps, and Storage Accounts via terraform module to enhance application availability and storage efficiency.",
             "Integrated Cross-plane with ArgoCD to enable declarative, cloud-native infrastructure management across multi-cloud environments, ensuring streamlined orchestration and enhanced operational visibility.",
+            "Built a GenAI solution leveraging Azure OpenAI and LangChain for Retrieval-Augmented Generation (RAG) and internal module creation. Fine-tuned OpenAI models using project-specific datasets hosted securely in Azure Blob Storage."
           ],
         },
         {
@@ -127,7 +127,10 @@ export default function ResumePageContent() {
                 <Mail className="h-4 w-4 text-accent flex-shrink-0" />
                 <a href={`mailto:${resumeData.contact.email}`} className="hover:text-accent transition-colors break-all">{resumeData.contact.email}</a>
               </div>
-              {/* Removed Phone */}
+              {/* <div className="flex items-center space-x-2">
+                <Phone className="h-4 w-4 text-accent flex-shrink-0" />
+                <span>{resumeData.contact.phone}</span>
+              </div> */}
               <div className="flex items-center space-x-2">
                 <MapPin className="h-4 w-4 text-accent flex-shrink-0" />
                 <span>{resumeData.contact.location}</span>
@@ -251,6 +254,3 @@ export default function ResumePageContent() {
     </div>
   );
 }
-
-// Re-import Briefcase if it wasn't already (it was imported above)
-// import { Briefcase } from 'lucide-react'; // Already imported

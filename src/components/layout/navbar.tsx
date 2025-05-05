@@ -1,18 +1,19 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { Menu, X, Home, User, Briefcase, GithubIcon, Layers, Palette } from "lucide-react";
+import { Menu, X, Home, User, Briefcase, GithubIcon, Layers, Palette, Rss } from "lucide-react"; // Added Rss
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger, SheetClose } from "@/components/ui/sheet";
 import { cn } from "@/lib/utils";
 import { ThemeToggle } from "@/components/theme-toggle";
+// Removed SocialMediaPanel import as it's no longer used here
 
 const navItems = [
   { href: "/", label: "Home", icon: Home },
   { href: "/resume", label: "Resume", icon: User },
   { href: "/projects", label: "Projects", icon: Briefcase },
-  { href: "/github", label: "GitHub", icon: GithubIcon },
-  { href: "/other", label: "Other", icon: Layers },
+  // { href: "/github", label: "GitHub", icon: GithubIcon }, // Commented out GitHub
+  { href: "/other", label: "Blog", icon: Rss }, // Changed label to Blog, icon to Rss
 ];
 
 // Define props for the Navbar component
@@ -129,6 +130,7 @@ export default function Navbar({ currentPathname }: NavbarProps) {
            <div className="ml-4 flex items-center space-x-2 border-l border-border/40 pl-4">
              <ThemeToggle /> {/* Render the new ThemeToggle Switch */}
            </div>
+           {/* Removed SocialMediaPanel from here */}
         </nav>
 
         {/* Mobile Navigation */}
@@ -172,6 +174,7 @@ export default function Navbar({ currentPathname }: NavbarProps) {
                   </SheetClose>
                 ))}
               </nav>
+              {/* Removed SocialMediaPanel from sheet */}
             </SheetContent>
           </Sheet>
         </div>
