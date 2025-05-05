@@ -2,22 +2,48 @@
 
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+// Updated import for non-deprecated GithubIcon
 import { GithubIcon, Star, GitFork, ExternalLink } from "lucide-react";
 // import Link from "next/link"; // Use standard anchor tags
 import { Badge } from "@/components/ui/badge";
-import React, { useEffect } from 'react'; // Import useEffect
+// Removed unused React import
+import { useEffect } from 'react';
 
-// Data remains the same
+// Updated data with AI/DevOps focused repos
 const githubData = {
-    username: "manishsinghdevops",
+    username: "singhmanishds", // Your actual username
     profileUrl: "https://github.com/singhmanishds",
     repositories: [
-        { name: "Terraform-Azure-Modules", description: "Reusable Terraform modules for provisioning various Azure resources following best practices.", stars: 120, forks: 35, url: "https://github.com/manishsinghdevops/Terraform-Azure-Modules", language: "HCL" },
-        { name: "k8s-helm-charts", description: "A collection of Helm charts for deploying common applications and services on Kubernetes.", stars: 85, forks: 20, url: "https://github.com/manishsinghdevops/k8s-helm-charts", language: "YAML" },
-        { name: "python-automation-scripts", description: "Various Python scripts designed to automate common DevOps tasks and workflows.", stars: 50, forks: 15, url: "https://github.com/manishsinghdevops/python-automation-scripts", language: "Python" },
-        { name: "github-actions-workflows", description: "A repository showcasing example GitHub Actions workflows for different CI/CD scenarios.", stars: 70, forks: 25, url: "https://github.com/manishsinghdevops/github-actions-workflows", language: "YAML" },
-        { name: "dotfiles", description: "My personal configuration files (dotfiles) for development environment setup.", stars: 30, forks: 5, url: "https://github.com/manishsinghdevops/dotfiles", language: "Shell" },
-        { name: "portfolio-nextjs", description: "The source code for this portfolio website built with Next.js and ShadCN UI.", stars: 45, forks: 10, url: "https://github.com/manishsinghdevops/portfolio-nextjs", language: "TypeScript" }
+        {
+            name: "rag-terraform-builder",
+            description: "A Retrieval-Augmented Generation (RAG) system using LangChain and Azure OpenAI to generate Terraform code based on best practices from internal documentation.",
+            stars: 0, // Placeholder - update later
+            forks: 0, // Placeholder - update later
+            url: "https://github.com/singhmanishds/rag-terraform-builder", // Placeholder URL
+            language: "Python"
+        },
+        {
+            name: "aks-observability-stack",
+            description: "Helm chart and configurations for deploying a comprehensive observability stack (Prometheus, Grafana, Loki) on Azure Kubernetes Service (AKS).",
+            stars: 0, // Placeholder - update later
+            forks: 0, // Placeholder - update later
+            url: "https://github.com/singhmanishds/aks-observability-stack", // Placeholder URL
+            language: "YAML"
+        },
+        {
+            name: "genai-ci-cd-pipelines",
+            description: "Example GitHub Actions and Azure DevOps pipelines showcasing CI/CD workflows specifically designed for deploying and testing Generative AI applications (e.g., containerized LLMs, RAG systems).",
+            stars: 0, // Placeholder - update later
+            forks: 0, // Placeholder - update later
+            url: "https://github.com/singhmanishds/genai-ci-cd-pipelines", // Placeholder URL
+            language: "YAML"
+        },
+        // Keeping these for variety, adjust as needed
+        // { name: "Terraform-Azure-Modules", description: "Reusable Terraform modules for provisioning various Azure resources following best practices.", stars: 120, forks: 35, url: "https://github.com/manishsinghdevops/Terraform-Azure-Modules", language: "HCL" },
+        // { name: "k8s-helm-charts", description: "A collection of Helm charts for deploying common applications and services on Kubernetes.", stars: 85, forks: 20, url: "https://github.com/manishsinghdevops/k8s-helm-charts", language: "YAML" },
+        // { name: "python-automation-scripts", description: "Various Python scripts designed to automate common DevOps tasks and workflows.", stars: 50, forks: 15, url: "https://github.com/manishsinghdevops/python-automation-scripts", language: "Python" },
+        // { name: "dotfiles", description: "My personal configuration files (dotfiles) for development environment setup.", stars: 30, forks: 5, url: "https://github.com/manishsinghdevops/dotfiles", language: "Shell" },
+        // { name: "portfolio-nextjs", description: "The source code for this portfolio website built with Next.js and ShadCN UI.", stars: 45, forks: 10, url: "https://github.com/manishsinghdevops/portfolio-nextjs", language: "TypeScript" }
     ]
 };
 
@@ -40,7 +66,8 @@ export default function GitHubPageContent() {
     <div className="container mx-auto px-4 py-12 md:py-16">
       <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-12">
         <h1 className="text-3xl md:text-4xl font-bold text-primary flex items-center tracking-tight mb-3 md:mb-0">
-          <GithubIcon className="h-8 w-8 mr-3 text-accent" />
+           {/* Use the non-deprecated GithubIcon */}
+           <GithubIcon className="h-8 w-8 mr-3 text-accent" />
           GitHub Contributions
         </h1>
         <Button variant="outline" asChild className="mt-4 md:mt-0 hover:bg-accent hover:text-accent-foreground border-primary/50 hover:border-accent transition-all duration-300 focus-visible:ring-accent shadow-sm hover:shadow-md transform hover:-translate-y-0.5">
@@ -51,7 +78,7 @@ export default function GitHubPageContent() {
       </div>
 
       <p className="text-lg text-muted-foreground mb-12 leading-relaxed">
-        Explore some of my public repositories showcasing my work in DevOps, automation, and cloud technologies. These projects reflect my commitment to open source and best practices.
+        Explore some of my public repositories showcasing my work in DevOps, automation, and cloud technologies. These projects reflect my commitment to open source and best practices. (Note: Repository details are illustrative).
       </p>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10">

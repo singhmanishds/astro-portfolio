@@ -1,7 +1,8 @@
 
 "use client";
 
-import { Linkedin, Github, Twitter, Mail } from "lucide-react";
+// Updated imports for non-deprecated icons
+import { LinkedinIcon, GithubIcon, TwitterIcon, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip"; // Import Tooltip components
 
@@ -10,19 +11,19 @@ const socialLinks = [
   {
     name: "LinkedIn",
     url: "https://www.linkedin.com/in/manishsingh9075/", // Updated LinkedIn URL
-    icon: Linkedin,
+    icon: LinkedinIcon, // Use LinkedinIcon
     ariaLabel: "Connect on LinkedIn",
   },
   {
     name: "GitHub",
     url: "https://github.com/singhmanishds", // Updated GitHub URL
-    icon: Github,
+    icon: GithubIcon, // Use GithubIcon
     ariaLabel: "View GitHub Profile",
   },
    {
     name: "Twitter",
     url: "#", // Replace with your actual Twitter URL or remove if not applicable (using # for placeholder)
-    icon: Twitter,
+    icon: TwitterIcon, // Use TwitterIcon
     ariaLabel: "Follow on Twitter",
   },
    {

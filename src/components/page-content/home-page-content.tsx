@@ -5,7 +5,8 @@ import { motion } from 'framer-motion';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-import { ArrowRight, User, Briefcase, Github as GithubIconLucide, Layers, Cloud, Code, GitBranch, Monitor, Bot, Rss, FileText } from 'lucide-react'; // Added Rss, FileText
+// Removed unused Layers, GithubIconLucide imports. Replaced Github alias.
+import { ArrowRight, User, Briefcase, Cloud, Code, GitBranch, Monitor, Bot, Rss, FileText } from 'lucide-react';
 import { SocialMediaPanel } from '@/components/layout/social-media-panel';
 // Using a basic img tag for simplicity in Astro/React context
 
@@ -74,7 +75,7 @@ const sections = [
     //     title: "GitHub Contributions",
     //     description: "View my public repositories, contributions, and open-source activity.",
     //     link: "/github",
-    //     icon: GithubIconLucide,
+    //     icon: GithubIconLucide, // Using alias for clarity, can use GithubIcon directly
     //     bgColor: "bg-gradient-to-br from-muted/20 via-background to-secondary/20 dark:from-muted/15 dark:via-background dark:to-secondary/10",
     //     borderColor: "border-border",
     //     textColor: "text-foreground",

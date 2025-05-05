@@ -1,7 +1,8 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { Menu, X, Home, User, Briefcase, GithubIcon, Layers, Palette, Rss } from "lucide-react"; // Added Rss
+// Removed unused GithubIcon, Layers imports
+import { Menu, X, Home, User, Briefcase, Palette, Rss } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger, SheetClose } from "@/components/ui/sheet";
 import { cn } from "@/lib/utils";

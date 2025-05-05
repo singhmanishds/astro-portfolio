@@ -3,22 +3,11 @@
 import * as React from "react"
 import { Moon, Sun } from "lucide-react"
 import { Switch } from "@/components/ui/switch"
-import { Label } from "@/components/ui/label"
+// Removed unused Label import
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 
 // Helper function to apply theme and update localStorage
-function toggleTheme(isCurrentlyDark: boolean) {
-  const newTheme = isCurrentlyDark ? 'light' : 'dark';
-
-  if (newTheme === 'dark') {
-    document.documentElement.classList.add('dark');
-  } else {
-    document.documentElement.classList.remove('dark');
-  }
-  // Store the *new* theme preference
-  localStorage.setItem('theme', newTheme);
-  localStorage.setItem('resolved_theme', newTheme); // Also update resolved theme for consistency
-}
+// Removed unused toggleTheme function
 
 export function ThemeToggle() {
   // State to hold whether dark mode is currently *active*
