@@ -1,27 +1,36 @@
-
 ---
 // src/pages/github.astro
 import Layout from '@/layouts/Layout.astro';
-import { Card, CardHeader, CardTitle, CardDescription } from '@/components/ui/card'; // ShadCN components
-import { Button } from '@/components/ui/button';
-import { Github, Construction } from 'lucide-react'; // Import icons
+import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Github as GithubIcon, Construction, ExternalLink } from 'lucide-react'; // Alias Github import
+
+const githubUsername = "singhmanishds";
+const githubProfileUrl = `https://github.com/${githubUsername}`;
 ---
 
 <Layout title="GitHub - Under Construction">
-  <div class="container mx-auto px-4 py-16 flex items-center justify-center min-h-[calc(100vh-var(--header-height)-10rem)]">
+  <div class="container mx-auto px-4 py-16 md:py-24 flex flex-col items-center justify-center min-h-[calc(100vh-10rem)]">
     <Card className="max-w-xl w-full shadow-lg border border-border/50 bg-card rounded-xl p-8 text-center">
       <CardHeader className="p-0 mb-6">
-        <Construction className="h-16 w-16 text-accent mx-auto mb-4" />
+        <Construction className="h-16 w-16 text-primary mx-auto mb-4" />
         <CardTitle className="text-2xl font-semibold text-primary mb-2">GitHub Section Under Construction</CardTitle>
         <CardDescription className="text-muted-foreground text-lg">
-          I'm currently organizing my public repositories. Please check back soon!
+          This section is currently being built. Soon, you'll find details about my public repositories and contributions here.
         </CardDescription>
       </CardHeader>
-      <Button variant="outline" asChild>
-        <a href="https://github.com/singhmanishds" target="_blank" rel="noopener noreferrer">
-          <Github className="mr-2 h-4 w-4" /> Visit My GitHub Profile
-        </a>
-      </Button>
+      <CardContent className="p-0">
+        <p class="mb-6 text-muted-foreground">
+          In the meantime, feel free to visit my GitHub profile directly.
+        </p>
+        <Button variant="outline" asChild className="hover:bg-accent hover:text-accent-foreground border-primary/50 hover:border-accent transition-all duration-300 focus-visible:ring-accent shadow-sm hover:shadow-md transform hover:-translate-y-0.5">
+          <a href={githubProfileUrl} target="_blank" rel="noopener noreferrer">
+            <GithubIcon className="mr-2 h-4 w-4" /> {/* Use the alias */}
+            View Profile on GitHub
+            <ExternalLink className="ml-2 h-4 w-4" />
+          </a>
+        </Button>
+      </CardContent>
     </Card>
   </div>
 </Layout>
