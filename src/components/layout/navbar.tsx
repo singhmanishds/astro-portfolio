@@ -57,7 +57,7 @@ export default function Navbar({ currentPathname }: NavbarProps) {
         <div className="container flex h-16 max-w-screen-xl items-center">
           <a href="/" className="mr-6 flex items-center space-x-2" aria-label="Go to Homepage">
              <Palette className="h-6 w-6 text-primary transition-transform hover:scale-110" />
-             <span className="font-semibold hidden sm:inline-block text-lg">codeandcurtains</span>
+             <span className="font-semibold hidden sm:inline-block text-lg">codeandcurtain</span>
           </a>
           {/* Placeholder elements */}
           <div className="hidden md:flex flex-1 items-center justify-end space-x-1">
@@ -105,7 +105,7 @@ export default function Navbar({ currentPathname }: NavbarProps) {
         {/* Logo/Brand */}
         <a href="/" className="mr-6 flex items-center space-x-2 group" aria-label="Go to Homepage">
            <Palette className="h-6 w-6 text-primary transition-transform group-hover:scale-110 group-hover:rotate-[-10deg]" />
-           <span className="font-semibold hidden sm:inline-block text-lg group-hover:text-primary transition-colors">codeandcurtains</span>
+           <span className="font-semibold hidden sm:inline-block text-lg group-hover:text-primary transition-colors">codeandcurtain</span>
         </a>
 
         {/* Desktop Navigation */}
@@ -148,7 +148,7 @@ export default function Navbar({ currentPathname }: NavbarProps) {
                <div className="flex items-center justify-between pl-6 mb-8">
                  <a href="/" className="flex items-center space-x-2 group" aria-label="Go to Homepage">
                     <Palette className="h-6 w-6 text-primary group-hover:scale-110" />
-                     <span className="font-semibold text-lg group-hover:text-primary transition-colors">codeandcurtains</span>
+                     <span className="font-semibold text-lg group-hover:text-primary transition-colors">codeandcurtain</span>
                  </a>
                  <SheetClose asChild>
                    <Button variant="ghost" size="icon" className="mr-4 text-muted-foreground">
