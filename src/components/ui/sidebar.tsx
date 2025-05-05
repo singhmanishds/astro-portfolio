@@ -1,8 +1,9 @@
+
 "use client"
 
 import * as React from "react"
 import { Slot } from "@radix-ui/react-slot"
-import { VariantProps, cva } from "class-variance-authority"
+import { type VariantProps, cva } from "class-variance-authority" // Import VariantProps as type
 import { PanelLeft } from "lucide-react"
 
 import { useIsMobile } from "@/hooks/use-mobile"
@@ -67,7 +68,8 @@ const SidebarProvider = React.forwardRef<
     },
     ref
   ) => {
-    const isMobile = useIsMobile()
+    const isMobileHookValue = useIsMobile();
+    const isMobile = isMobileHookValue ?? false; // Provide a default value (false)
     const [openMobile, setOpenMobile] = React.useState(false)
 
     // This is the internal state of the sidebar.
@@ -121,7 +123,7 @@ const SidebarProvider = React.forwardRef<
         state,
         open,
         setOpen,
-        isMobile,
+        isMobile, // Pass the ensured boolean value
         openMobile,
         setOpenMobile,
         toggleSidebar,

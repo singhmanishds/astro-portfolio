@@ -1,9 +1,10 @@
+
 'use client';
 
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-// Updated import for non-deprecated GithubIcon
-import { GithubIcon, Star, GitFork, ExternalLink } from "lucide-react";
+// Updated import for non-deprecated Github icon
+import { Github, Star, GitFork, ExternalLink } from "lucide-react"; // Use Github
 // import Link from "next/link"; // Use standard anchor tags
 import { Badge } from "@/components/ui/badge";
 // Removed unused React import
@@ -66,8 +67,8 @@ export default function GitHubPageContent() {
     <div className="container mx-auto px-4 py-12 md:py-16">
       <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-12">
         <h1 className="text-3xl md:text-4xl font-bold text-primary flex items-center tracking-tight mb-3 md:mb-0">
-           {/* Use the non-deprecated GithubIcon */}
-           <GithubIcon className="h-8 w-8 mr-3 text-accent" />
+           {/* Use the non-deprecated Github icon */}
+           <Github className="h-8 w-8 mr-3 text-accent" />
           GitHub Contributions
         </h1>
         <Button variant="outline" asChild className="mt-4 md:mt-0 hover:bg-accent hover:text-accent-foreground border-primary/50 hover:border-accent transition-all duration-300 focus-visible:ring-accent shadow-sm hover:shadow-md transform hover:-translate-y-0.5">

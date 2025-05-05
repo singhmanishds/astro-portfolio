@@ -1,10 +1,12 @@
+
 'use client'; // Keep client directive for potential future interactions, though currently static
 
 import React from 'react';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 import { Badge } from "@/components/ui/badge";
-import { Mail, Phone, MapPin, Linkedin, Github, Monitor, Database, Cloud, Code, Terminal, Network, GitBranch, ShieldCheck, BrainCircuit, Server, BookOpen, UserCircle, Briefcase } from 'lucide-react';
+// Use non-deprecated icons, removed Phone
+import { Mail, MapPin, Linkedin, Github, Monitor, Database, Cloud, Code, Terminal, Network, GitBranch, ShieldCheck, BrainCircuit, Server, BookOpen, UserCircle, Briefcase } from 'lucide-react';
 
 // Resume data remains the same
 const resumeData = {
@@ -127,10 +129,7 @@ export default function ResumePageContent() {
                 <Mail className="h-4 w-4 text-accent flex-shrink-0" />
                 <a href={`mailto:${resumeData.contact.email}`} className="hover:text-accent transition-colors break-all">{resumeData.contact.email}</a>
               </div>
-              {/* <div className="flex items-center space-x-2">
-                <Phone className="h-4 w-4 text-accent flex-shrink-0" />
-                <span>{resumeData.contact.phone}</span>
-              </div> */}
+              {/* Removed Phone section */}
               <div className="flex items-center space-x-2">
                 <MapPin className="h-4 w-4 text-accent flex-shrink-0" />
                 <span>{resumeData.contact.location}</span>
