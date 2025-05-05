@@ -1,20 +1,21 @@
+
 "use client";
 
 import { Linkedin, Github, Twitter, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip"; // Import Tooltip components
 
-// Define your social media links here
+// Updated social media links
 const socialLinks = [
   {
     name: "LinkedIn",
-    url: "https://www.linkedin.com/in/manishsinghdevops/", // Replace with your actual LinkedIn URL
+    url: "https://www.linkedin.com/in/manishsingh9075/", // Updated LinkedIn URL
     icon: Linkedin,
     ariaLabel: "Connect on LinkedIn",
   },
   {
     name: "GitHub",
-    url: "https://github.com/manishsinghdevops/", // Replace with your actual GitHub URL
+    url: "https://github.com/singhmanishds", // Updated GitHub URL
     icon: Github,
     ariaLabel: "View GitHub Profile",
   },
@@ -26,7 +27,7 @@ const socialLinks = [
   },
    {
     name: "Email",
-    url: "mailto:singhmanishds@gmail.com", // Replace with your email
+    url: "mailto:singhmanishds@gmail.com", // Updated Email
     icon: Mail,
     ariaLabel: "Send an Email",
   },

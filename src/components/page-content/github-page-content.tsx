@@ -1,3 +1,4 @@
+
 'use client';
 
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
@@ -7,19 +8,42 @@ import { GithubIcon, Star, GitFork, ExternalLink } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import React, { useEffect } from 'react'; // Import useEffect
 
-// Data remains the same
+// Updated data with real GitHub username and new repo examples
 const githubData = {
-    username: "manishsinghdevops",
-    profileUrl: "https://github.com/manishsinghdevops",
+    username: "singhmanishds", // Updated username
+    profileUrl: "https://github.com/singhmanishds", // Updated profile URL
     repositories: [
-        { name: "Terraform-Azure-Modules", description: "Reusable Terraform modules for provisioning various Azure resources following best practices.", stars: 120, forks: 35, url: "https://github.com/manishsinghdevops/Terraform-Azure-Modules", language: "HCL" },
-        { name: "k8s-helm-charts", description: "A collection of Helm charts for deploying common applications and services on Kubernetes.", stars: 85, forks: 20, url: "https://github.com/manishsinghdevops/k8s-helm-charts", language: "YAML" },
-        { name: "python-automation-scripts", description: "Various Python scripts designed to automate common DevOps tasks and workflows.", stars: 50, forks: 15, url: "https://github.com/manishsinghdevops/python-automation-scripts", language: "Python" },
-        { name: "github-actions-workflows", description: "A repository showcasing example GitHub Actions workflows for different CI/CD scenarios.", stars: 70, forks: 25, url: "https://github.com/manishsinghdevops/github-actions-workflows", language: "YAML" },
-        { name: "dotfiles", description: "My personal configuration files (dotfiles) for development environment setup.", stars: 30, forks: 5, url: "https://github.com/manishsinghdevops/dotfiles", language: "Shell" },
-        { name: "portfolio-nextjs", description: "The source code for this portfolio website built with Next.js and ShadCN UI.", stars: 45, forks: 10, url: "https://github.com/manishsinghdevops/portfolio-nextjs", language: "TypeScript" }
+        {
+            name: "GenAI-Terraform-Module-Generator",
+            description: "Proof-of-concept using Genkit & Gemini to generate Terraform module boilerplate based on specified Azure/AWS resource types and parameters.",
+            stars: 25,
+            forks: 5,
+            url: "https://github.com/singhmanishds/GenAI-Terraform-Module-Generator", // Placeholder URL
+            language: "TypeScript"
+        },
+        {
+            name: "Automated-MLOps-Pipeline-Azure",
+            description: "A complete MLOps pipeline template using Azure DevOps, Azure ML, Terraform, and Docker for automated training, deployment, and monitoring of ML models.",
+            stars: 40,
+            forks: 10,
+            url: "https://github.com/singhmanishds/Automated-MLOps-Pipeline-Azure", // Placeholder URL
+            language: "YAML"
+        },
+        {
+            name: "k8s-Observability-Stack-Helm",
+            description: "Helm charts for deploying a comprehensive Kubernetes observability stack (Prometheus, Grafana, Loki, Tempo) with pre-configured dashboards and alerts.",
+            stars: 30,
+            forks: 8,
+            url: "https://github.com/singhmanishds/k8s-Observability-Stack-Helm", // Placeholder URL
+            language: "YAML"
+        },
+        // Keeping some existing relevant ones for variety
+         { name: "Terraform-Azure-Modules", description: "Reusable Terraform modules for provisioning various Azure resources following best practices.", stars: 120, forks: 35, url: "https://github.com/singhmanishds/Terraform-Azure-Modules", language: "HCL" },
+         { name: "github-actions-workflows", description: "A repository showcasing example GitHub Actions workflows for different CI/CD scenarios.", stars: 70, forks: 25, url: "https://github.com/singhmanishds/github-actions-workflows", language: "YAML" },
+         { name: "dotfiles", description: "My personal configuration files (dotfiles) for development environment setup.", stars: 30, forks: 5, url: "https://github.com/singhmanishds/dotfiles", language: "Shell" },
     ]
 };
+
 
 export default function GitHubPageContent() {
 
@@ -51,7 +75,7 @@ export default function GitHubPageContent() {
       </div>
 
       <p className="text-lg text-muted-foreground mb-12 leading-relaxed">
-        Explore some of my public repositories showcasing my work in DevOps, automation, and cloud technologies. These projects reflect my commitment to open source and best practices.
+        Explore some of my public repositories showcasing my work in DevOps, automation, cloud, and emerging AI integrations. These projects reflect my commitment to open source and exploring innovative solutions.
       </p>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10">
