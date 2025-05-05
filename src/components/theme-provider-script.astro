@@ -1,0 +1,28 @@
+---
+// src/components/theme-provider-script.astro
+// This script runs *before* hydration to set the initial theme.
+// It avoids FOUC by applying the theme class ('dark') directly to the <html> element.
+const script = `
+  (function() {
+    const theme = (() => {
+      const storedTheme = localStorage.getItem('theme');
+      if (storedTheme === 'light' || storedTheme === 'dark') {
+        return storedTheme;
+      }
+      // If no explicit theme set, use system preference
+      return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    })();
+
+    if (theme === 'dark') {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+    // Store 'light' or 'dark' explicitly if derived from system preference
+    // This simplifies the toggle logic later.
+    // We don't store 'system' here, only the resolved value.
+    localStorage.setItem('resolved_theme', theme);
+  })();
+`;
+---
+<script is:inline set:html={script} />

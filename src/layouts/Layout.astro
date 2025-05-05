@@ -1,0 +1,95 @@
+---
+import '@/styles/globals.css';
+import Navbar from '@/components/layout/navbar.tsx'; // Import the React Navbar
+import ThemeProviderScript from '@/components/theme-provider-script.astro'; // Import the theme script
+import { Toaster } from "@/components/ui/toaster"; // Import Toaster for notifications (React)
+
+interface Props {
+	title?: string;
+	description?: string;
+}
+
+const {
+	title = 'Manish Singh - DevOps Engineer Portfolio',
+	description = 'Personal portfolio website showcasing the skills and projects of Manish Singh, a DevOps Engineer specializing in cloud infrastructure, automation, and CI/CD.',
+} = Astro.props;
+
+// Get current pathname for Navbar active state
+const currentPathname = Astro.url.pathname;
+---
+
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content={description} />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+        {/* Inject theme script *before* rendering body to prevent FOUC */}
+        <ThemeProviderScript />
+	</head>
+	<body class="antialiased bg-background text-foreground">
+        {/*
+            Render the React Navbar component.
+            client:load ensures the JS for the Navbar (and ThemeToggle within it)
+            loads and hydrates immediately on page load. This is necessary for
+            the theme toggle and mobile menu to be interactive right away.
+         */}
+		<Navbar client:load currentPathname={currentPathname} />
+
+		<main>
+			{/* The content of each page will be inserted here */}
+			<slot />
+		</main>
+
+        {/*
+            Render the Toaster component.
+            client:idle defers loading its JS until the browser is idle,
+            as toasts are not usually critical for initial interaction.
+         */}
+        <Toaster client:idle />
+
+        {/* Optional Footer can go here */}
+        <footer class="border-t border-border/40 mt-16 py-8 bg-muted/30">
+            <div class="container mx-auto px-4 text-center text-muted-foreground text-sm">
+                &copy; {new Date().getFullYear()} Manish Singh. All rights reserved.
+                <p class="mt-1">Built with <a href="https://astro.build/" target="_blank" rel="noopener noreferrer" class="text-primary hover:underline">Astro</a> & <a href="https://react.dev/" target="_blank" rel="noopener noreferrer" class="text-primary hover:underline">React</a>.</p>
+            </div>
+        </footer>
+
+	</body>
+</html>
+<style is:global>
+/* Style for smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+/* Improve focus visibility for accessibility */
+*:focus-visible {
+  outline: 2px solid hsl(var(--ring));
+  outline-offset: 2px;
+  border-radius: 2px; /* Optional: makes the outline rounded */
+}
+
+/* Keyframes for gradient animation used on homepage H1 */
+@keyframes gradient-x {
+	0%, 100% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+}
+.animate-gradient-x {
+	animation: gradient-x 5s ease infinite;
+    background-size: 200% 200%; /* Ensure gradient covers area */
+}
+
+
+</style>

@@ -1,0 +1,9 @@
+---
+import Layout from '@/layouts/Layout.astro';
+import OtherPageContent from '@/components/page-content/other-page-content';
+---
+
+<Layout title="Other Activities - Manish Singh">
+    {/* Similar to projects, could use client:visible or client:idle */}
+    <OtherPageContent client:load />
+</Layout>

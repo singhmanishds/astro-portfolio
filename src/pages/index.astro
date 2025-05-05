@@ -1,0 +1,14 @@
+---
+import Layout from '@/layouts/Layout.astro';
+import HomePageContent from '@/components/page-content/home-page-content'; // Import the React component
+---
+
+<Layout title="Home - Manish Singh Portfolio">
+  {/*
+    Render the React HomePageContent component.
+    client:load ensures interactivity (Framer Motion, state) is available immediately.
+    You could use client:idle or client:visible for potentially better performance
+    if animations aren't critical above the fold.
+  */}
+  <HomePageContent client:load />
+</Layout>

@@ -1,0 +1,9 @@
+---
+import Layout from '@/layouts/Layout.astro';
+import GitHubPageContent from '@/components/page-content/github-page-content';
+---
+
+<Layout title="GitHub - Manish Singh">
+    {/* This component uses standard img/links and a useEffect hook for image fallback. client:load ensures the effect runs. */}
+    <GitHubPageContent client:load />
+</Layout>

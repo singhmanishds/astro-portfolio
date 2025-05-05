@@ -1,0 +1,14 @@
+---
+import Layout from '@/layouts/Layout.astro';
+import ProjectsPageContent from '@/components/page-content/projects-page-content';
+---
+
+<Layout title="Projects - Manish Singh">
+    {/*
+       This component uses standard img tags and links, so it doesn't strictly need client hydration
+       unless future interactivity (filters, modals etc.) is added.
+       `client:visible` or `client:idle` would be good options here.
+       Using `client:load` for simplicity for now.
+    */}
+    <ProjectsPageContent client:load />
+</Layout>

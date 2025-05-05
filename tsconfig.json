@@ -1,0 +1,26 @@
+{
+  "extends": "astro/tsconfigs/strict",
+  "compilerOptions": {
+    "baseUrl": ".", // Needed for path aliases
+    "paths": {
+      "@/*": ["src/*"] // Keep path aliases
+    },
+    "jsx": "react-jsx", // Use react-jsx for React components
+    "jsxImportSource": "react", // Specify React as the source
+    "esModuleInterop": true, // Keep for compatibility
+    "skipLibCheck": true, // Keep for faster type checking
+    "strict": true, // Keep strict mode
+    "allowJs": true, // Allow JS files
+    "resolveJsonModule": true, // Allow importing JSON
+    "moduleResolution": "bundler", // Use bundler resolution
+    "allowImportingTsExtensions": true, // Allow importing .ts files (needed by Astro check)
+    "noEmit": true, // Astro handles emit
+     // Add or ensure these are present for React 18+
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "module": "esnext", // Use ESNext module system
+    "isolatedModules": true, // Recommended for Babel/SWC
+    "target": "ES2017" // Keep target
+  },
+  "include": ["src/**/*.ts", "src/**/*.tsx", "src/**/*.astro", "astro.config.mjs", "tailwind.config.mjs"], // Include Astro files and configs
+  "exclude": ["node_modules", "dist"] // Exclude node_modules and build output
+}
