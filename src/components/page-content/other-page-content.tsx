@@ -13,7 +13,7 @@ const otherContent = [
         description: "An exploration of why prompt engineering is becoming a vital skill across tech roles, with practical advice on how to improve.",
         link: "https://medium.com/@singhmanishds/prompt-engineering-the-underrated-soft-skill-every-techie-needs-yes-even-you-14eb5fb8c0cb",
         icon: <FileText className="h-5 w-5 text-accent" />,
-        imageUrl: "https://picsum.photos/seed/promptEngBlog/600/400", // Use the same seed as homepage for consistency
+        imageUrl: "https://miro.medium.com/v2/resize:fit:1400/format:webp/1*HMUMrXYkn2uSnhfWEdmVMw.png", // Use the same seed as homepage for consistency
         imageHint: "abstract AI brain text interface",
     },
     {

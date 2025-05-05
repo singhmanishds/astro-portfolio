@@ -106,7 +106,7 @@ const latestBlogPost = {
     title: "Prompt Engineering: The Underrated Soft Skill Every Techie Needs",
     description: "Discover why mastering prompt engineering is crucial in the age of AI, even if you're not an AI specialist. Explore practical tips and insights.",
     link: "https://medium.com/@singhmanishds/prompt-engineering-the-underrated-soft-skill-every-techie-needs-yes-even-you-14eb5fb8c0cb",
-    imageUrl: "https://picsum.photos/seed/promptEngBlog/800/400", // Example placeholder
+    imageUrl: "https://miro.medium.com/v2/resize:fit:1400/format:webp/1*HMUMrXYkn2uSnhfWEdmVMw.png", // Example placeholder
     imageHint: "abstract AI brain text interface",
 };
 
@@ -131,7 +131,7 @@ export default function HomePageContent() {
               transition={{ type: 'spring', stiffness: 300 }}
            >
                <img
-                  src="https://picsum.photos/seed/manishprofile/200/200"
+                  src="src/images/self.png"
                   alt="Manish Singh Profile"
                   className="w-full h-full object-cover transform transition-transform duration-500 group-hover:scale-110"
                   data-ai-hint="professional headshot man studio lighting"
