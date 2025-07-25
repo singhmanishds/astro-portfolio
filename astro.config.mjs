@@ -7,7 +7,5 @@ export default defineConfig({
   integrations: [react(), tailwind()],
   adapter: netlify(),
   output: "server", // required in Astro v5+
-  server: {
-    port: 9002
-  }
+
 });
