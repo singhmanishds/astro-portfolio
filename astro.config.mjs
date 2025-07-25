@@ -1,10 +1,14 @@
 import { defineConfig } from 'astro/config';
-import react from "@astrojs/react";
 import tailwind from "@astrojs/tailwind";
-import node from "@astrojs/node";
+import react from "@astrojs/react";
+import netlify from "@astrojs/netlify"; // Import the Netlify adapter
 
+// https://astro.build/config
 export default defineConfig({
-  integrations: [react(), tailwind()],
-  adapter: node({ mode: "directory" }),
-  output: "server",
+  integrations: [
+    tailwind({ applyBaseStyles: false }), // Disable default base styles if using ShadCN's globals
+    react()
+  ],
+  output: "static", // Set output to 'hybrid' for SSR/SSG mix on Netlify
+  adapter: netlify() // Add the Netlify adapter
 });
