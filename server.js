@@ -1,7 +1,5 @@
-import { startServer } from 'astro/server';
-import { handler } from './dist/server/entry.mjs';
+import { handler } from './dist/serverless/entry.mjs';
 
-startServer(handler, {
-  port: process.env.PORT ? parseInt(process.env.PORT) : 8080, // Cloud Run expects port 8080
-  hostname: '0.0.0.0',
-});
+// In the directory mode, Astro generates a serverless function handler.
+// We just need to export this handler to be used by the serverless environment.
+export default handler;

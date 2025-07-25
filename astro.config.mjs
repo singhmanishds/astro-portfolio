@@ -5,6 +5,6 @@ import node from "@astrojs/node";
 
 export default defineConfig({
   integrations: [react(), tailwind()],
-  adapter: node({ mode: "standalone" }),
+  adapter: node({ mode: "directory" }),
   output: "server",
 });
