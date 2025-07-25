@@ -140,7 +140,7 @@ export default function ResumePageContent() {
                 </div>
               </div>
               <a
-                href="/public/Manish_Singh_Resume.pdf"
+                href="/Manish_Singh_Resume.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
                 download

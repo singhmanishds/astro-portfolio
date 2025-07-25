@@ -95,7 +95,7 @@ const latestBlogPost = {
 // Social links for the hero section
 const socialLinks = [
   {
-    href: 'https://www.linkedin.com/in/singhmanishds/',
+    href: 'https://www.linkedin.com/in/manishsingh9075/',
     label: 'LinkedIn',
     icon: Linkedin,
   },
