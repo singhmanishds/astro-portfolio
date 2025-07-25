@@ -1,0 +1,115 @@
+---
+import '@/styles/globals.css';
+import Navbar from '@/components/layout/navbar.tsx'; // Import the React Navbar
+import ThemeProviderScript from '@/components/theme-provider-script.astro'; // Import the theme script
+import { Toaster } from "@/components/ui/toaster"; // Import Toaster for notifications (React)
+
+interface Props {
+	title?: string;
+	description?: string;
+}
+
+const {
+	title = 'Manish Singh - DevOps Engineer Portfolio',
+	description = 'Personal portfolio website showcasing the skills and projects of Manish Singh, a DevOps Engineer specializing in cloud infrastructure, automation, and CI/CD.',
+} = Astro.props;
+
+// Get current pathname for Navbar active state
+const currentPathname = Astro.url.pathname;
+---
+
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content={description} />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+        {/* Inject theme script *before* rendering body to prevent FOUC */}
+        <ThemeProviderScript />
+	</head>
+	<body class="antialiased bg-background text-foreground">
+        {/*
+            Render the React Navbar component.
+            client:load ensures the JS for the Navbar (and ThemeToggle within it)
+            loads and hydrates immediately on page load. This is necessary for
+            the theme toggle and mobile menu to be interactive right away.
+         */}
+		<Navbar client:load currentPathname={currentPathname} />
+
+		<main>
+			{/* The content of each page will be inserted here */}
+			<slot />
+		</main>
+
+        {/*
+            Render the Toaster component.
+            client:idle defers loading its JS until the browser is idle,
+            as toasts are not usually critical for initial interaction.
+         */}
+        <Toaster client:idle />
+
+        {/* Optional Footer can go here */}
+        <footer class="border-t border-border/40 mt-16 py-8 bg-muted/30">
+  <div class="container mx-auto px-4 text-center text-muted-foreground text-sm flex flex-col items-center gap-3">
+    {/* Social/contact icons row */}
+    <div class="flex justify-center gap-4 mb-2">
+      <a href="https://www.linkedin.com/in/singhmanishds/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" title="LinkedIn" class="inline-flex items-center justify-center rounded-full bg-background border border-border shadow hover:bg-accent/20 hover:border-accent/60 transition-all w-10 h-10 focus-visible:ring-2 focus-visible:ring-primary/60 focus-visible:outline-none">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path d="M16 8a6 6 0 0 1 6 6v5h-4v-5a2 2 0 0 0-4 0v5h-4v-9h4v1.5"/><rect x="2" y="9" width="4" height="12" rx="2"/><circle cx="4" cy="4" r="2"/></svg>
+      </a>
+      <a href="https://medium.com/@singhmanishds" target="_blank" rel="noopener noreferrer" aria-label="Medium" title="Medium" class="inline-flex items-center justify-center rounded-full bg-background border border-border shadow hover:bg-accent/20 hover:border-accent/60 transition-all w-10 h-10 focus-visible:ring-2 focus-visible:ring-primary/60 focus-visible:outline-none">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor"><circle cx="6" cy="12" r="4"/><ellipse cx="17" cy="12" rx="3" ry="6"/><ellipse cx="22" cy="12" rx="1" ry="6"/></svg>
+      </a>
+      <a href="mailto:singhmanishds@gmail.com" aria-label="Email" title="Email" class="inline-flex items-center justify-center rounded-full bg-background border border-border shadow hover:bg-accent/20 hover:border-accent/60 transition-all w-10 h-10 focus-visible:ring-2 focus-visible:ring-primary/60 focus-visible:outline-none">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="22,6 12,13 2,6"/></svg>
+      </a>
+    </div>
+    {/* Copyright and back to top */}
+    <div class="flex flex-col md:flex-row md:items-center md:justify-between w-full max-w-2xl mx-auto gap-2">
+      <div class="text-xs text-muted-foreground/70">&copy; {new Date().getFullYear()} Manish Singh. All rights reserved.</div>
+      <div class="flex items-center gap-2">
+        <p class="mt-1 text-xs text-muted-foreground/60">Built with <a href="https://astro.build/" target="_blank" rel="noopener noreferrer" class="text-primary hover:underline">Astro</a> & <a href="https://react.dev/" target="_blank" rel="noopener noreferrer" class="text-primary hover:underline">React</a>.</p>
+        <a href="#top" aria-label="Back to Top" title="Back to Top" class="ml-2 inline-flex items-center justify-center rounded-full bg-background border border-border shadow hover:bg-accent/20 hover:border-accent/60 transition-all w-9 h-9 focus-visible:ring-2 focus-visible:ring-primary/60 focus-visible:outline-none">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor"><polyline points="18 15 12 9 6 15"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+	</body>
+</html>
+<style is:global>
+/* Style for smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+/* Improve focus visibility for accessibility */
+*:focus-visible {
+  outline: 2px solid hsl(var(--ring));
+  outline-offset: 2px;
+  border-radius: 2px; /* Optional: makes the outline rounded */
+}
+
+/* Keyframes for gradient animation used on homepage H1 */
+@keyframes gradient-x {
+	0%, 100% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+}
+.animate-gradient-x {
+	animation: gradient-x 5s ease infinite;
+    background-size: 200% 200%; /* Ensure gradient covers area */
+}
+
+
+</style>

@@ -1,0 +1,8 @@
+---
+import Layout from '@/layouts/Layout.astro';
+import ResumePageContent from '@/components/page-content/resume-page-content'; // Import React component
+---
+
+<Layout title="Resume - Manish Singh">
+    <ResumePageContent client:idle /> {/* Render React component, hydrate when idle */}
+</Layout>
